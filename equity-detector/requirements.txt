@@ -1,0 +1,16 @@
+transformers
+torch
+pandas
+streamlit
+plotly
+numpy
+Pillow
+pytesseract
+openai>=1.0.0
+openpyxl
+scikit-learn
+matplotlib
+seaborn
+scipy
+umap-learn
+tqdm

@@ -1,0 +1,29 @@
+graph TB
+    subgraph "Dataset Sources - 120,000+ Balanced Samples"
+        D1["🗣️ Jigsaw Toxic Comments<br/>━━━━━━━━━━━━━━━━<br/>Source: Wikipedia Talk Pages<br/>Size: 160,000+ comments<br/>Labels: 6 toxicity types<br/>Focus: Discussion moderation<br/>Platform: Wikipedia"]
+        
+        D2["💬 Civil Comments<br/>━━━━━━━━━━━━━━━━<br/>Source: News article comments<br/>Size: 2M+ public comments<br/>Labels: Multi-aspect toxicity<br/>Focus: Identity annotations<br/>Platform: News sites"]
+        
+        D3["🐦 Twitter Cyberbullying<br/>━━━━━━━━━━━━━━━━<br/>Source: Social media posts<br/>Size: 47,000+ tweets<br/>Labels: Multi-class bullying<br/>Focus: Short-form content<br/>Platform: Twitter"]
+        
+        D4["⚠️ Hate Speech Dataset<br/>━━━━━━━━━━━━━━━━<br/>Source: Davidson et al.<br/>Size: 25,000+ tweets<br/>Labels: Hate vs. offensive<br/>Focus: Distinguishing intent<br/>Platform: Twitter"]
+        
+        D5["❓ Formspring Q&A<br/>━━━━━━━━━━━━━━━━<br/>Source: Q&A platform<br/>Size: 12,000+ posts<br/>Labels: Binary cyberbullying<br/>Focus: Forum interactions<br/>Platform: Formspring"]
+    end
+    
+    D1 --> AGGREGATE["⚖️ Balanced Sampling Strategy<br/>━━━━━━━━━━━━━━━━<br/>✓ Equal representation across types<br/>✓ Diverse platform coverage<br/>✓ Demographic fairness<br/>✓ Prevents overfitting"]
+    D2 --> AGGREGATE
+    D3 --> AGGREGATE
+    D4 --> AGGREGATE
+    D5 --> AGGREGATE
+    
+    AGGREGATE --> FINAL["📊 Final Training Set<br/>━━━━━━━━━━━━━━━━<br/>Total: 120,000+ samples<br/>Split: 80% train / 20% val<br/>Class Balance: ~90% safe, ~10% toxic<br/>Coverage: 5 platforms, 6 toxicity types"]
+    
+    style D1 fill:#e1f5ff,stroke:#0288d1,stroke-width:3px
+    style D2 fill:#fff3e0,stroke:#f57c00,stroke-width:3px
+    style D3 fill:#e8f5e9,stroke:#388e3c,stroke-width:3px
+    style D4 fill:#fce4ec,stroke:#c2185b,stroke-width:3px
+    style D5 fill:#f3e5f5,stroke:#7b1fa2,stroke-width:3px
+    style AGGREGATE fill:#fff9c4,stroke:#f9a825,stroke-width:4px
+    style FINAL fill:#c8e6c9,stroke:#2e7d32,stroke-width:4px
+

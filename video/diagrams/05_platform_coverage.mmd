@@ -1,0 +1,16 @@
+graph TD
+    MODEL["🤖 Equity Ally BERT"]
+    
+    MODEL --> P1["📰 News Comments<br/>Civil Comments"]
+    MODEL --> P2["💬 Discussion Forums<br/>Wikipedia, Formspring"]
+    MODEL --> P3["🐦 Social Media<br/>Twitter"]
+    
+    P1 --> USE1["Long-form<br/>discussions"]
+    P2 --> USE2["Q&A<br/>interactions"]
+    P3 --> USE3["Short-form<br/>posts"]
+    
+    style MODEL fill:#c8e6c9,stroke:#2e7d32,stroke-width:4px
+    style P1 fill:#e1f5ff,stroke:#0288d1,stroke-width:2px
+    style P2 fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    style P3 fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+

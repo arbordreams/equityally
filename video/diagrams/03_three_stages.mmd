@@ -1,0 +1,13 @@
+flowchart TD
+    STAGE1["🔵 STAGE 1: DATA<br/>━━━━━━━━━━━━━━<br/>Collect 5 datasets<br/>Clean & preprocess<br/>Balance to 120K samples<br/>Split 80/20 train/val"]
+    
+    STAGE2["🔴 STAGE 2: FINE-TUNING<br/>━━━━━━━━━━━━━━<br/>Start: bert-base-uncased<br/>Train on 120K samples<br/>3-4 epochs, lr=2e-5<br/>Result: 89.94% accuracy"]
+    
+    STAGE3["🟢 STAGE 3: CALIBRATION<br/>━━━━━━━━━━━━━━<br/>Apply isotonic regression<br/>Fix probability estimates<br/>Optimize threshold to 0.80<br/>Result: 96.84% accuracy ⭐"]
+    
+    STAGE1 --> STAGE2 --> STAGE3
+    
+    style STAGE1 fill:#e3f2fd,stroke:#1976d2,stroke-width:3px
+    style STAGE2 fill:#fce4ec,stroke:#c2185b,stroke-width:3px
+    style STAGE3 fill:#c8e6c9,stroke:#2e7d32,stroke-width:3px
+

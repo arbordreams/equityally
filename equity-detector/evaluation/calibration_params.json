@@ -1,0 +1,35 @@
+{
+  "temperature": {
+    "T": 0.6174292285696743,
+    "thresholds": [
+      0.8000000000000003
+    ]
+  },
+  "platt": {
+    "coefficients": [
+      [
+        1.958016061045342,
+        -2.361265348607656
+      ]
+    ],
+    "thresholds": [
+      0.3500000000000001
+    ]
+  },
+  "isotonic": {
+    "thresholds": [
+      0.40000000000000013
+    ]
+  },
+  "uncalibrated": {
+    "thresholds_f1": [
+      0.7000000000000002
+    ],
+    "thresholds_ece": [
+      0.5
+    ],
+    "thresholds_brier": [
+      0.5
+    ]
+  }
+}

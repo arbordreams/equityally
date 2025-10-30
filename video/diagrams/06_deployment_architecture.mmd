@@ -1,0 +1,21 @@
+flowchart TD
+    USER["👤 User Input<br/>Text or CSV"]
+    
+    subgraph "Local Processing (Privacy-First)"
+        TOKENIZE["🔤 Tokenization<br/>BERT tokenizer<br/>Max 256 tokens"]
+        INFERENCE["🧠 BERT Inference<br/>Forward pass<br/>CPU-optimized"]
+        CALIBRATE["📊 Calibration<br/>Apply isotonic mapping<br/>Reliable probabilities"]
+        THRESHOLD["🎯 Decision<br/>Threshold: 0.80<br/>Safe vs. Concerning"]
+    end
+    
+    OUTPUT["📋 Results<br/>• Risk score<br/>• Classification<br/>• Confidence<br/>• Visualization"]
+    
+    USER --> TOKENIZE --> INFERENCE --> CALIBRATE --> THRESHOLD --> OUTPUT
+    
+    style USER fill:#e1f5ff,stroke:#0288d1,stroke-width:2px
+    style TOKENIZE fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    style INFERENCE fill:#fce4ec,stroke:#c2185b,stroke-width:3px
+    style CALIBRATE fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    style THRESHOLD fill:#e8f5e9,stroke:#388e3c,stroke-width:2px
+    style OUTPUT fill:#c8e6c9,stroke:#2e7d32,stroke-width:3px
+

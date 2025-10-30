@@ -1,0 +1,2 @@
+BERT_Model/*.safetensors filter=lfs diff=lfs merge=lfs -text
+BERT_Model/*.zip filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,61 @@
+%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+graph TB
+    START["🔥 Uncalibrated BERT Model<br/>━━━━━━━━━━━━━━━━<br/>Validation Accuracy: 89.94%<br/>Problem: Overconfident predictions<br/>Issue: Poor probability calibration"]
+    
+    subgraph METHODS["🔬 Calibration Methods Tested"]
+        M1["🌡️ Temperature Scaling<br/>━━━━━━━━━━━━━━━━<br/>Type: Parametric<br/>Parameters: 1 (temperature T)<br/>Method: logits / T<br/>Complexity: Simple"]
+        
+        M2["📉 Platt Scaling<br/>━━━━━━━━━━━━━━━━<br/>Type: Parametric<br/>Parameters: 2 (a, b)<br/>Method: Sigmoid(a×logit + b)<br/>Complexity: Moderate"]
+        
+        M3["📈 Isotonic Regression<br/>━━━━━━━━━━━━━━━━<br/>Type: Non-parametric<br/>Parameters: Learned mapping<br/>Method: Monotonic function<br/>Complexity: Flexible"]
+    end
+    
+    START --> M1
+    START --> M2
+    START --> M3
+    
+    subgraph RESULTS["📊 Calibration Results Comparison"]
+        R1["Temperature Scaling<br/>━━━━━━━━━━━━━━━━<br/>Val Accuracy: 96.77%<br/>Test Accuracy: 91.20%<br/>Val F1: 84.73%<br/>Test F1: 66.84%<br/>Improvement: +6.83pp"]
+        
+        R2["Platt Scaling<br/>━━━━━━━━━━━━━━━━<br/>Val Accuracy: 96.80%<br/>Test Accuracy: 91.38%<br/>Val F1: 84.85%<br/>Test F1: 67.14%<br/>Improvement: +6.86pp"]
+        
+        R3["✨ Isotonic Regression ⭐<br/>━━━━━━━━━━━━━━━━<br/>Val Accuracy: 96.84%<br/>Test Accuracy: 91.52%<br/>Val F1: 84.87%<br/>Test F1: 67.19%<br/>Improvement: +6.90pp"]
+    end
+    
+    M1 --> R1
+    M2 --> R2
+    M3 --> R3
+    
+    subgraph ANALYSIS["🎯 Method Analysis"]
+        A1["Temperature: Best for<br/>━━━━━━━━━━━━━━━━<br/>✓ Simplicity<br/>✓ Speed<br/>✓ Interpretability<br/>✗ Lower accuracy"]
+        
+        A2["Platt: Best for<br/>━━━━━━━━━━━━━━━━<br/>✓ Balance<br/>✓ Good performance<br/>✓ Established method<br/>✗ Not optimal"]
+        
+        A3["Isotonic: Best for ⭐<br/>━━━━━━━━━━━━━━━━<br/>✓ Highest accuracy<br/>✓ Flexibility<br/>✓ No assumptions<br/>✓ PRODUCTION CHOICE"]
+    end
+    
+    R1 --> A1
+    R2 --> A2
+    R3 --> A3
+    
+    A3 --> FINAL["🎉 FINAL MODEL<br/>━━━━━━━━━━━━━━━━<br/>Method: Isotonic Regression<br/>Val Accuracy: 96.84%<br/>Test Accuracy: 91.52%<br/>Threshold: 0.80<br/>Status: Production-Ready ✅"]
+    
+    subgraph COMPARISON["📊 Performance Metrics"]
+        C1["Validation Set<br/>━━━━━━━━━━━━━━━━<br/>Uncalibrated: 89.94%<br/>Temperature: 96.77%<br/>Platt: 96.80%<br/>Isotonic: 96.84% ⭐"]
+        
+        C2["Test Set<br/>━━━━━━━━━━━━━━━━<br/>Uncalibrated: 89.94%<br/>Temperature: 91.20%<br/>Platt: 91.38%<br/>Isotonic: 91.52% ⭐"]
+        
+        C3["F1 Score (Val)<br/>━━━━━━━━━━━━━━━━<br/>Uncalibrated: 74.35%<br/>Temperature: 84.73%<br/>Platt: 84.85%<br/>Isotonic: 84.87% ⭐"]
+    end
+    
+    FINAL --> COMPARISON
+    
+    style START fill:#ffebee,stroke:#c62828,stroke-width:3px
+    style METHODS fill:#e3f2fd,stroke:#1976d2,stroke-width:3px
+    style RESULTS fill:#f3e5f5,stroke:#7b1fa2,stroke-width:3px
+    style ANALYSIS fill:#fff3e0,stroke:#f57c00,stroke-width:3px
+    style COMPARISON fill:#e8f5e9,stroke:#388e3c,stroke-width:3px
+    style FINAL fill:#c8e6c9,stroke:#2e7d32,stroke-width:4px
+    style R3 fill:#d1c4e9,stroke:#7b1fa2,stroke-width:3px
+    style A3 fill:#ffe0b2,stroke:#f57c00,stroke-width:3px
+

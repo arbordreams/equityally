@@ -1,0 +1,43 @@
+# IDE and System
+.idea/
+.vscode/
+.DS_Store
+*.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Project-specific exclusions
+project-docs/
+equity-detector/_deprecated/
+equity-detector/REORGANIZATION*.md
+equity-detector/venv/
+archive/
+
+# Video production files (exclude scripts/narration, keep diagrams)
+# (video instruction files removed from repo)
+
+# Model files (large)
+equity-detector/BERT_Model*.zip
+equity-detector/*.zip
+
+# Congressional App Challenge submission (private)
+
+# Generated outputs (keep structure, ignore large outputs)
+equity-detector/logs/*.log
+equity-detector/evaluation/*.npy
+equity-detector/visualizations/*.png
+equity-detector/visualizations/analysis/*.png
+equity-detector/visualizations/baseline/*.png
+equity-detector/visualizations/calibrated/*.png
+equity-detector/recordings/*.mp4
+equity-detector/recordings/*.gif

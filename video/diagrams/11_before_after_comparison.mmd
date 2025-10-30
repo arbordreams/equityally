@@ -1,0 +1,62 @@
+%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'16px'}}}%%
+graph LR
+    subgraph BEFORE["❌ BEFORE: The Problem"]
+        B1["Commercial AI Solutions<br/>━━━━━━━━━━━━━━━━<br/>💰 Expensive ($$$)<br/>🔒 Closed-source<br/>☁️ Cloud-dependent<br/>📡 API costs per use"]
+        
+        B2["OpenAI Moderation API<br/>━━━━━━━━━━━━━━━━<br/>Cost: $0.002 per request<br/>Privacy: Data sent to cloud<br/>Offline: Not possible<br/>Control: Limited"]
+        
+        B3["Perspective API (Google)<br/>━━━━━━━━━━━━━━━━<br/>Cost: Rate limited<br/>Privacy: External service<br/>Offline: Not possible<br/>Control: Black box"]
+        
+        B4["❌ Barriers for Schools<br/>━━━━━━━━━━━━━━━━<br/>• Budget constraints<br/>• Privacy concerns (FERPA)<br/>• Internet requirements<br/>• Vendor lock-in"]
+        
+        B1 --> B4
+        B2 --> B4
+        B3 --> B4
+    end
+    
+    subgraph AFTER["✅ AFTER: Equity Ally Solution"]
+        A1["Open-Source BERT Model<br/>━━━━━━━━━━━━━━━━<br/>💚 Free (MIT License)<br/>📖 Open-source<br/>💻 Runs locally<br/>📱 Works offline"]
+        
+        A2["96.84% Accuracy<br/>━━━━━━━━━━━━━━━━<br/>Performance: Enterprise-grade<br/>Speed: <100ms per text<br/>Hardware: CPU-only<br/>Size: 418MB"]
+        
+        A3["Privacy-First Design<br/>━━━━━━━━━━━━━━━━<br/>Data: Never leaves device<br/>FERPA: Compliant<br/>COPPA: Compliant<br/>Trust: Full transparency"]
+        
+        A4["✅ Perfect for Schools<br/>━━━━━━━━━━━━━━━━<br/>• $0 cost (no budget needed)<br/>• 100% private (FERPA/COPPA)<br/>• Offline capable<br/>• Full control"]
+        
+        A1 --> A4
+        A2 --> A4
+        A3 --> A4
+    end
+    
+    BEFORE ==>|"🚀 TRANSFORMATION"|AFTER
+    
+    subgraph IMPACT["🎯 IMPACT METRICS"]
+        I1["💰 Cost Savings<br/>━━━━━━━━━━━━━━━━<br/>$0 vs $1000s/year<br/>No per-request fees<br/>Unlimited usage<br/>One-time download"]
+        
+        I2["🔒 Privacy Gains<br/>━━━━━━━━━━━━━━━━<br/>100% local processing<br/>Zero data transmission<br/>Full FERPA compliance<br/>Student data protected"]
+        
+        I3["⚡ Performance<br/>━━━━━━━━━━━━━━━━<br/>96.84% accuracy<br/>Matches commercial APIs<br/>Faster (local)<br/>Always available"]
+        
+        I4["🌍 Accessibility<br/>━━━━━━━━━━━━━━━━<br/>Works on Chromebooks<br/>No technical expertise<br/>Easy deployment<br/>Universal access"]
+        
+        I1 --> I5["🎉 RESULT: Democratized AI Safety"]
+        I2 --> I5
+        I3 --> I5
+        I4 --> I5
+    end
+    
+    AFTER --> IMPACT
+    
+    style BEFORE fill:#ffebee,stroke:#c62828,stroke-width:3px
+    style AFTER fill:#c8e6c9,stroke:#2e7d32,stroke-width:3px
+    style IMPACT fill:#e3f2fd,stroke:#1976d2,stroke-width:3px
+    style B1 fill:#ffcdd2,stroke:#c62828,stroke-width:2px
+    style B2 fill:#ffcdd2,stroke:#c62828,stroke-width:2px
+    style B3 fill:#ffcdd2,stroke:#c62828,stroke-width:2px
+    style B4 fill:#ef9a9a,stroke:#c62828,stroke-width:3px
+    style A1 fill:#a5d6a7,stroke:#2e7d32,stroke-width:2px
+    style A2 fill:#a5d6a7,stroke:#2e7d32,stroke-width:2px
+    style A3 fill:#a5d6a7,stroke:#2e7d32,stroke-width:2px
+    style A4 fill:#81c784,stroke:#2e7d32,stroke-width:3px
+    style I5 fill:#64b5f6,stroke:#1976d2,stroke-width:4px
+

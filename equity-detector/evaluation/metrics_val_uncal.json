@@ -1,0 +1,24 @@
+{
+  "any_toxic_f1": 0.7434915773353752,
+  "any_toxic_roc_auc": 0.987729833323654,
+  "any_toxic_pr_auc": 0.9242523618281571,
+  "any_toxic_ece": 0.10256404588073492,
+  "any_toxic_brier": 0.04819482217862671,
+  "any_toxic_accuracy": 0.933,
+  "any_toxic_precision": 0.6042314872433105,
+  "any_toxic_recall": 0.9661691542288557,
+  "confusion_matrix": {
+    "true_negatives": 8359,
+    "false_positives": 636,
+    "false_negatives": 34,
+    "true_positives": 971
+  },
+  "f1_macro": 0.7434915773353752,
+  "f1_micro": 0.7434915773353752,
+  "roc_auc_macro": 0.987729833323654,
+  "pr_auc_macro": 0.9242523618281571,
+  "ece_macro": 0.10256404588073492,
+  "brier_macro": 0.04819482217862671,
+  "split": "val",
+  "variant": "uncal"
+}

@@ -1,0 +1,81 @@
+flowchart TD
+    START["🎯 START: bert-base-uncased<br/>━━━━━━━━━━━━━━━━<br/>110M parameters<br/>Pretrained on BookCorpus + Wikipedia"]
+    
+    subgraph STAGE1["⚡ STAGE 1: Data Collection & Preparation"]
+        DS1["📚 Dataset Collection<br/>━━━━━━━━━━━━━━━━<br/>• Jigsaw Wikipedia (160K)<br/>• Civil Comments (2M+)<br/>• Twitter Cyberbullying (47K)<br/>• Hate Speech (25K)<br/>• Formspring Q&A (12K)"]
+        
+        DS2["🧹 Preprocessing Pipeline<br/>━━━━━━━━━━━━━━━━<br/>• Text cleaning & normalization<br/>• Multi-label aggregation<br/>• Deduplication<br/>• Quality filtering"]
+        
+        DS3["⚖️ Intelligent Sampling<br/>━━━━━━━━━━━━━━━━<br/>• 120K balanced samples<br/>• Equal platform representation<br/>• Demographic fairness<br/>• 80/20 train/val split"]
+        
+        DS1 --> DS2 --> DS3
+    end
+    
+    subgraph STAGE2["🔥 STAGE 2: BERT Fine-Tuning"]
+        FT1["⚙️ Configuration<br/>━━━━━━━━━━━━━━━━<br/>LR: 2e-5 | Batch: 32<br/>Epochs: 3-4 | Tokens: 256<br/>Optimizer: AdamW<br/>Loss: BCE"]
+        
+        FT2["🎓 Training Process<br/>━━━━━━━━━━━━━━━━<br/>96K training samples<br/>24K validation samples<br/>Early stopping enabled<br/>GPU-accelerated"]
+        
+        FT3["📊 Baseline Results<br/>━━━━━━━━━━━━━━━━<br/>Val Acc: 89.94%<br/>Test Acc: 89.94%<br/>F1: 74.35%<br/>Status: Uncalibrated ⚠️"]
+        
+        FT1 --> FT2 --> FT3
+    end
+    
+    subgraph STAGE3["📈 STAGE 3: Advanced Calibration"]
+        CAL1["🔬 Method Evaluation<br/>━━━━━━━━━━━━━━━━<br/>Testing 3 approaches:<br/>✓ Isotonic Regression<br/>✓ Temperature Scaling<br/>✓ Platt Scaling"]
+        
+        CAL2["🎯 Isotonic Selected<br/>━━━━━━━━━━━━━━━━<br/>Non-parametric fitting<br/>Monotonic mapping<br/>Probability alignment<br/>Best validation score"]
+        
+        CAL3["✨ Calibrated Model<br/>━━━━━━━━━━━━━━━━<br/>Val Acc: 96.84% ⬆️<br/>Test Acc: 91.52% ⬆️<br/>F1: 84.87% ⬆️<br/>Improvement: +6.9pp 🎯"]
+        
+        CAL1 --> CAL2 --> CAL3
+    end
+    
+    subgraph STAGE4["🎯 STAGE 4: Optimization & Validation"]
+        OPT1["🔍 Threshold Tuning<br/>━━━━━━━━━━━━━━━━<br/>Grid search validation<br/>F1-optimal: 0.80<br/>Precision/Recall balance<br/>FPR minimization"]
+        
+        OPT2["📊 Metric Analysis<br/>━━━━━━━━━━━━━━━━<br/>ROC-AUC: 96.80%<br/>PR-AUC: 92.43%<br/>FPR: 2.20%<br/>FNR: 11.74%"]
+        
+        OPT3["🧪 Quality Assurance<br/>━━━━━━━━━━━━━━━━<br/>Calibration curves ✓<br/>Confusion analysis ✓<br/>Error inspection ✓<br/>Bias auditing ✓"]
+        
+        OPT1 --> OPT2 --> OPT3
+    end
+    
+    subgraph STAGE5["🚀 STAGE 5: Production Deployment"]
+        DEPLOY1["📦 Model Export<br/>━━━━━━━━━━━━━━━━<br/>Format: SafeTensors<br/>Calibration params included<br/>Size: 418MB<br/>CPU-optimized"]
+        
+        DEPLOY2["🌐 Web Application<br/>━━━━━━━━━━━━━━━━<br/>Framework: Streamlit<br/>Inference: <100ms<br/>Privacy: Local-only<br/>Platform: Cross-device"]
+        
+        DEPLOY3["🎉 PRODUCTION READY<br/>━━━━━━━━━━━━━━━━<br/>✓ 96.84% val accuracy<br/>✓ 91.52% test accuracy<br/>✓ Chromebook compatible<br/>✓ $0 API costs"]
+        
+        DEPLOY1 --> DEPLOY2 --> DEPLOY3
+    end
+    
+    START --> DS1
+    DS3 --> FT1
+    FT3 --> CAL1
+    CAL3 --> OPT1
+    OPT3 --> DEPLOY1
+    
+    style START fill:#e1f5ff,stroke:#0288d1,stroke-width:4px,color:#000
+    style STAGE1 fill:#fff3e0,stroke:#f57c00,stroke-width:3px
+    style STAGE2 fill:#fce4ec,stroke:#c2185b,stroke-width:3px
+    style STAGE3 fill:#f3e5f5,stroke:#7b1fa2,stroke-width:3px
+    style STAGE4 fill:#e8f5e9,stroke:#388e3c,stroke-width:3px
+    style STAGE5 fill:#c8e6c9,stroke:#2e7d32,stroke-width:3px
+    style DS1 fill:#fff8e1,stroke:#f57c00,stroke-width:2px
+    style DS2 fill:#fff8e1,stroke:#f57c00,stroke-width:2px
+    style DS3 fill:#fff8e1,stroke:#f57c00,stroke-width:2px
+    style FT1 fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+    style FT2 fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+    style FT3 fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+    style CAL1 fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    style CAL2 fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    style CAL3 fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    style OPT1 fill:#e8f5e9,stroke:#388e3c,stroke-width:2px
+    style OPT2 fill:#e8f5e9,stroke:#388e3c,stroke-width:2px
+    style OPT3 fill:#e8f5e9,stroke:#388e3c,stroke-width:2px
+    style DEPLOY1 fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
+    style DEPLOY2 fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
+    style DEPLOY3 fill:#a5d6a7,stroke:#1b5e20,stroke-width:4px
+

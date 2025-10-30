@@ -1,0 +1,88 @@
+%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'16px'}}}%%
+graph TB
+    EQUITYALLY["🛡️ EQUITY ALLY<br/>━━━━━━━━━━━<br/>96.84% | $0 | Privacy-First"]
+    
+    subgraph EDUCATION["🎓 EDUCATION"]
+        E1["K-12 Schools<br/>━━━━━━━<br/>Boards & messaging<br/>Anti-bullying"]
+        
+        E2["Universities<br/>━━━━━━━<br/>Forums & reviews<br/>Campus safety"]
+        
+        E3["Online Learning<br/>━━━━━━━<br/>EdTech platforms<br/>Virtual classes"]
+        
+        E4["✓ FERPA/COPPA<br/>✓ Chromebooks<br/>✓ Zero cost"]
+    end
+    
+    subgraph COMMUNITY["🌍 COMMUNITY"]
+        C1["Youth Orgs<br/>━━━━━━━<br/>Programs & centers<br/>Safe spaces"]
+        
+        C2["Support Groups<br/>━━━━━━━<br/>Mental health<br/>Crisis support"]
+        
+        C3["Anti-Bullying<br/>━━━━━━━<br/>Advocacy<br/>Education"]
+        
+        C4["✓ No fees<br/>✓ Easy setup<br/>✓ Full control"]
+    end
+    
+    subgraph PLATFORMS["💻 PLATFORMS"]
+        P1["Gaming<br/>━━━━━━━<br/>Discord servers<br/>Tournaments"]
+        
+        P2["Social Networks<br/>━━━━━━━<br/>Community hubs<br/>Interest groups"]
+        
+        P3["Forums<br/>━━━━━━━<br/>Discussions<br/>Q&A sites"]
+        
+        P4["✓ Unlimited<br/>✓ Self-hosted<br/>✓ No lock-in"]
+    end
+    
+    subgraph RESEARCH["🔬 RESEARCH"]
+        R1["Academic<br/>━━━━━━━<br/>Toxicity studies<br/>AI safety"]
+        
+        R2["Data Analysis<br/>━━━━━━━<br/>Content trends<br/>Behavior"]
+        
+        R3["Model Dev<br/>━━━━━━━<br/>Transfer learning<br/>Benchmarking"]
+        
+        R4["✓ Open-source<br/>✓ Reproducible<br/>✓ Documented"]
+    end
+    
+    EQUITYALLY --> E1
+    EQUITYALLY --> E2
+    EQUITYALLY --> E3
+    E1 --> E4
+    E2 --> E4
+    E3 --> E4
+    
+    EQUITYALLY --> C1
+    EQUITYALLY --> C2
+    EQUITYALLY --> C3
+    C1 --> C4
+    C2 --> C4
+    C3 --> C4
+    
+    EQUITYALLY --> P1
+    EQUITYALLY --> P2
+    EQUITYALLY --> P3
+    P1 --> P4
+    P2 --> P4
+    P3 --> P4
+    
+    EQUITYALLY --> R1
+    EQUITYALLY --> R2
+    EQUITYALLY --> R3
+    R1 --> R4
+    R2 --> R4
+    R3 --> R4
+    
+    E4 --> IMPACT["🎯 IMPACT<br/>━━━━━━━<br/>Democratized AI<br/>Privacy-First<br/>Community-Owned"]
+    C4 --> IMPACT
+    P4 --> IMPACT
+    R4 --> IMPACT
+    
+    style EQUITYALLY fill:#c8e6c9,stroke:#2e7d32,stroke-width:4px
+    style EDUCATION fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    style COMMUNITY fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    style PLATFORMS fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    style RESEARCH fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+    style IMPACT fill:#fff9c4,stroke:#f9a825,stroke-width:4px
+    style E4 fill:#bbdefb,stroke:#1976d2,stroke-width:2px
+    style C4 fill:#ffe0b2,stroke:#f57c00,stroke-width:2px
+    style P4 fill:#e1bee7,stroke:#7b1fa2,stroke-width:2px
+    style R4 fill:#f8bbd0,stroke:#c2185b,stroke-width:2px
+

@@ -1,0 +1,68 @@
+%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'16px'}}}%%
+graph TB
+    subgraph DATASET1["📊 JIGSAW TOXIC COMMENTS"]
+        J1["Platform: Wikipedia Talk Pages"]
+        J2["Size: 160,000+ comments"]
+        J3["Labels: 6 toxicity types"]
+        J4["toxic • severe_toxic • obscene<br/>threat • insult • identity_hate"]
+        J5["Coverage: Discussion moderation"]
+        J6["Context: Long-form debates"]
+        J1 --> J2 --> J3 --> J4 --> J5 --> J6
+    end
+    
+    subgraph DATASET2["💬 CIVIL COMMENTS"]
+        C1["Platform: News article comments"]
+        C2["Size: 2,000,000+ comments"]
+        C3["Labels: Multi-aspect toxicity"]
+        C4["Identity-aware annotations"]
+        C5["Coverage: Public discourse"]
+        C6["Context: Political & social issues"]
+        C1 --> C2 --> C3 --> C4 --> C5 --> C6
+    end
+    
+    subgraph DATASET3["🐦 TWITTER CYBERBULLYING"]
+        T1["Platform: Twitter/X"]
+        T2["Size: 47,000+ tweets"]
+        T3["Labels: Multi-class bullying"]
+        T4["religion • age • ethnicity<br/>gender • other"]
+        T5["Coverage: Social media toxicity"]
+        T6["Context: Short-form, real-time"]
+        T1 --> T2 --> T3 --> T4 --> T5 --> T6
+    end
+    
+    subgraph DATASET4["⚠️ HATE SPEECH CORPUS"]
+        H1["Platform: Twitter/X"]
+        H2["Size: 25,000+ tweets"]
+        H3["Labels: 3-class classification"]
+        H4["hate speech • offensive<br/>neither"]
+        H5["Coverage: Intent distinction"]
+        H6["Context: Nuanced toxicity"]
+        H1 --> H2 --> H3 --> H4 --> H5 --> H6
+    end
+    
+    subgraph DATASET5["❓ FORMSPRING Q&A"]
+        F1["Platform: Q&A forums"]
+        F2["Size: 12,000+ posts"]
+        F3["Labels: Binary cyberbullying"]
+        F4["cyberbullying • safe"]
+        F5["Coverage: Forum interactions"]
+        F6["Context: Question-answer dynamics"]
+        F1 --> F2 --> F3 --> F4 --> F5 --> F6
+    end
+    
+    DATASET1 --> MERGE["🔄 INTEGRATION STRATEGY<br/>━━━━━━━━━━━━━━━━<br/>• Unified binary labels<br/>• Balanced sampling<br/>• Cross-platform validation<br/>• Demographic fairness"]
+    DATASET2 --> MERGE
+    DATASET3 --> MERGE
+    DATASET4 --> MERGE
+    DATASET5 --> MERGE
+    
+    MERGE --> FINAL["✨ FINAL TRAINING SET<br/>━━━━━━━━━━━━━━━━<br/>120,000 curated samples<br/>5 platforms | 6 toxicity types<br/>96K train | 24K validation<br/>~10% toxic | ~90% safe"]
+    
+    style DATASET1 fill:#e3f2fd,stroke:#1976d2,stroke-width:3px
+    style DATASET2 fill:#fff3e0,stroke:#f57c00,stroke-width:3px
+    style DATASET3 fill:#e8f5e9,stroke:#388e3c,stroke-width:3px
+    style DATASET4 fill:#fce4ec,stroke:#c2185b,stroke-width:3px
+    style DATASET5 fill:#f3e5f5,stroke:#7b1fa2,stroke-width:3px
+    style MERGE fill:#fff9c4,stroke:#f9a825,stroke-width:4px
+    style FINAL fill:#c8e6c9,stroke:#2e7d32,stroke-width:4px
+

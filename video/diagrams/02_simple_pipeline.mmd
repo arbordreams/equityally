@@ -1,0 +1,26 @@
+flowchart LR
+    subgraph DATASETS["📚 5 DIVERSE DATASETS"]
+        D1["Jigsaw<br/>160K samples<br/>Wikipedia"]
+        D2["Civil Comments<br/>2M+ samples<br/>News sites"]
+        D3["Twitter<br/>47K samples<br/>Social media"]
+        D4["Hate Speech<br/>25K samples<br/>Twitter"]
+        D5["Formspring<br/>12K samples<br/>Q&A forums"]
+    end
+    
+    DATASETS --> BALANCE["⚖️ BALANCED<br/>120K samples"]
+    
+    BALANCE --> BERT["🤖 BERT<br/>110M params<br/>Fine-tuning"]
+    
+    BERT --> UNCAL["89.94%<br/>accuracy"]
+    
+    UNCAL --> ISOTONIC["📈 Isotonic<br/>Calibration"]
+    
+    ISOTONIC --> FINAL["✨ 96.84%<br/>accuracy<br/>+6.9pp"]
+    
+    style DATASETS fill:#e1f5ff,stroke:#0288d1,stroke-width:3px
+    style BALANCE fill:#fff3e0,stroke:#f57c00,stroke-width:3px
+    style BERT fill:#fce4ec,stroke:#c2185b,stroke-width:3px
+    style UNCAL fill:#ffebee,stroke:#c62828,stroke-width:2px
+    style ISOTONIC fill:#f3e5f5,stroke:#7b1fa2,stroke-width:3px
+    style FINAL fill:#c8e6c9,stroke:#2e7d32,stroke-width:4px
+

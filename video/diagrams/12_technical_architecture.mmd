@@ -1,0 +1,73 @@
+%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+graph TB
+    subgraph USER["👥 USER INTERFACE"]
+        UI1["Streamlit Web App<br/>━━━━━━━━━━━━━━━━<br/>Single text analysis<br/>Bulk CSV processing<br/>Real-time feedback<br/>Visualizations"]
+    end
+    
+    subgraph INPUT["📥 INPUT PROCESSING"]
+        IN1["Text Input Handler<br/>━━━━━━━━━━━━━━━━<br/>Validation<br/>Sanitization<br/>Format detection"]
+        
+        IN2["BERT Tokenizer<br/>━━━━━━━━━━━━━━━━<br/>vocab.txt (30,522 tokens)<br/>WordPiece algorithm<br/>Max length: 256 tokens<br/>Padding & truncation"]
+        
+        IN1 --> IN2
+    end
+    
+    subgraph MODEL["🧠 BERT MODEL CORE"]
+        M1["Embedding Layer<br/>━━━━━━━━━━━━━━━━<br/>Token embeddings<br/>Position embeddings<br/>Segment embeddings<br/>Dimension: 768"]
+        
+        M2["12 Transformer Layers<br/>━━━━━━━━━━━━━━━━<br/>Multi-head attention (12 heads)<br/>Feed-forward networks<br/>Layer normalization<br/>Dropout regularization"]
+        
+        M3["Classification Head<br/>━━━━━━━━━━━━━━━━<br/>Dense layer (768 → 1)<br/>Sigmoid activation<br/>Binary output<br/>Logit extraction"]
+        
+        M1 --> M2 --> M3
+    end
+    
+    subgraph CALIBRATION["📊 CALIBRATION LAYER"]
+        CAL1["Isotonic Regression<br/>━━━━━━━━━━━━━━━━<br/>Non-parametric mapping<br/>Monotonic transformation<br/>Learned on validation set<br/>Probability alignment"]
+        
+        CAL2["Threshold Application<br/>━━━━━━━━━━━━━━━━<br/>Optimal threshold: 0.80<br/>F1-score maximized<br/>Binary classification<br/>Safe vs. Concerning"]
+        
+        CAL1 --> CAL2
+    end
+    
+    subgraph OUTPUT["📤 OUTPUT GENERATION"]
+        OUT1["Risk Assessment<br/>━━━━━━━━━━━━━━━━<br/>Probability score (0-1)<br/>Classification label<br/>Confidence level<br/>Interpretation"]
+        
+        OUT2["Visualization Engine<br/>━━━━━━━━━━━━━━━━<br/>Plotly charts<br/>Summary statistics<br/>Downloadable reports<br/>Interactive UI"]
+        
+        OUT1 --> OUT2
+    end
+    
+    subgraph OPTIONAL["🤖 OPTIONAL: GPT ASSISTANT"]
+        GPT1["OpenAI Integration<br/>━━━━━━━━━━━━━━━━<br/>Explanations<br/>Recommendations<br/>Context analysis<br/>User education"]
+    end
+    
+    UI1 --> IN1
+    IN2 --> M1
+    M3 --> CAL1
+    CAL2 --> OUT1
+    OUT2 --> GPT1
+    OUT2 --> DISPLAY["📱 USER DISPLAY<br/>━━━━━━━━━━━━━━━━<br/>Risk score visualization<br/>Classification result<br/>Detailed metrics<br/>Downloadable CSV"]
+    GPT1 -.Optional.-> DISPLAY
+    
+    subgraph STORAGE["💾 MODEL STORAGE"]
+        S1["model.safetensors (418MB)<br/>━━━━━━━━━━━━━━━━<br/>BERT weights<br/>Classification head<br/>Safe format<br/>Fast loading"]
+        
+        S2["config.json<br/>━━━━━━━━━━━━━━━━<br/>Model architecture<br/>Hyperparameters<br/>Label mapping"]
+        
+        S3["calibration_params.json<br/>━━━━━━━━━━━━━━━━<br/>Isotonic mapping<br/>Optimal threshold<br/>Validation metrics"]
+        
+        S1 --> M2
+        S2 --> M2
+        S3 --> CAL1
+    end
+    
+    style USER fill:#e3f2fd,stroke:#1976d2,stroke-width:3px
+    style INPUT fill:#fff3e0,stroke:#f57c00,stroke-width:3px
+    style MODEL fill:#fce4ec,stroke:#c2185b,stroke-width:3px
+    style CALIBRATION fill:#f3e5f5,stroke:#7b1fa2,stroke-width:3px
+    style OUTPUT fill:#e8f5e9,stroke:#388e3c,stroke-width:3px
+    style OPTIONAL fill:#fff9c4,stroke:#f9a825,stroke-width:2px
+    style STORAGE fill:#ede7f6,stroke:#5e35b1,stroke-width:3px
+    style DISPLAY fill:#c8e6c9,stroke:#2e7d32,stroke-width:4px
+
